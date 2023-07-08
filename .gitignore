@@ -1,3 +1,4 @@
-.env
+*.env
 venv
 log_processor\venv
+log_agent\venv
