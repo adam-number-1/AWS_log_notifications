@@ -1,4 +1,8 @@
+*__pycache__
+*.pytest_cache*
+*.pyc
 *.env
 venv
 log_processor\venv
 log_agent\venv
+*.log

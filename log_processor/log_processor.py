@@ -18,8 +18,8 @@ def error_generator(log_text):
             elif line.startswith('ERROR:'):
                 yield chunk
                 chunk = line
-            else:
-                chunk = chunk + line
+            elif line:
+                chunk = chunk + "\n" + line
 
         triggered = line.startswith('ERROR:')
 
