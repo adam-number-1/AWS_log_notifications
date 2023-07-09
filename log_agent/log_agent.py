@@ -25,7 +25,7 @@ def main(path_to_log: str) -> None:
 
     # creating the filename at he s3 bucket
     file_name: str = os.path.basename(path_to_log)
-    s3_key: str = os.path.join('logs', file_name)
+    s3_key: str = f'logs/{file_name}'
 
     # Create an S3 client
     s3 = boto3.client(
