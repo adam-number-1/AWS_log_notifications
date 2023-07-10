@@ -1,17 +1,27 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "S3GetObject",
-        "Effect": "Allow",
-        "Action": "s3:GetObject",
-        "Resource": "arn:aws:s3:::your-bucket-name/logs/*"
-      },
-      {
-        "Sid": "SNSTopicPublish",
-        "Effect": "Allow",
-        "Action": "sns:Publish",
-        "Resource": "arn:aws:sns:your-region:your-account-id:your-sns-topic"
-      }
-    ]
-  }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3GetObject",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/logs/*"
+    },
+    {
+      "Sid": "SNSTopicPublish",
+      "Effect": "Allow",
+      "Action": "sns:Publish",
+      "Resource": "arn:aws:sns:your-region:your-account-id:your-sns-topic"
+    },
+    {
+      "Sid": "BasicLambdaPermissions",
+      "Effect": "Allow",
+      "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:YOUR_REGION:YOUR_ACCOUNT_ID:*"
+    }
+  ]
+}
